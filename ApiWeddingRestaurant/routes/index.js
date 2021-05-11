@@ -66,6 +66,12 @@ router.get('/get_detail_post/:id' , authJWT , async(req,res)=>{
 
 })
 
+router.delete("/delete_post_restaurant/:id" , authJWT , async(req,res)=>{
+  let {id} = req.params;
+  await db.profile.remove({_id : id})
+  res.status(204).end()
+})
+
 router.get('/get_account_res', authJWT, async (req,res) => {
   let data = await db.accountRes.find()
  res.status(200).json(data)
