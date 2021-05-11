@@ -1,0 +1,22 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.top{
+    font-size: 40px;
+    color: rgb(233, 136, 44);
+}
+
+.btn-top{
+    position: fixed;
+    bottom: 25px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.btn-top.show-top{
+    opacity: 1;
+    transition: 0.5s;
+}

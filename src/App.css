@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+@keyframes showTopMenu{
+  from{transform: scaleY(0); transform-origin: 100% 0%;}
+  to{transform: scaleY(1); transform-origin: 100% 0%; }
+}
+
+@keyframes hiddenTopMenu{  
+  from{transform: scaleY(1); transform-origin: 100% 0%; }
+  to{transform: scaleY(0); transform-origin: 100% 0%;}
+}
+
+.show{
+  animation: showTopMenu 0.3s linear forwards;
+}
+
+.hidden{
+  animation: hiddenTopMenu 0.3s linear forwards;
+}
