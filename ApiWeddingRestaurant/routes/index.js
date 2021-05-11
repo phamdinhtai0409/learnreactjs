@@ -44,7 +44,6 @@ router.get('/get_post_restaurant' , authJWT , async(req,res)=>{
       success : true ,
       profile : data
     })
-
   }
   catch (err){
     res.status(400).end()
@@ -61,7 +60,10 @@ router.get('/get_detail_post/:id' , authJWT , async(req,res)=>{
     })
   }
   catch (err){
-    res.status(400).end()
+    res.status(400).json({
+      success : false ,
+      message : 'Error'
+    })
   }
 
 })
@@ -69,7 +71,10 @@ router.get('/get_detail_post/:id' , authJWT , async(req,res)=>{
 router.delete("/delete_post_restaurant/:id" , authJWT , async(req,res)=>{
   let {id} = req.params;
   await db.profile.remove({_id : id})
-  res.status(204).end()
+  res.status(204).json({
+    success :false ,
+    message : 'Error'
+  })
 })
 
 router.get('/get_account_res', authJWT, async (req,res) => {
